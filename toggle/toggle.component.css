@@ -1,0 +1,36 @@
+
+.outer {
+  display: inline-block;
+  width: 40px;
+  height: 20px;
+  border-radius: 10rem;
+  position: relative;
+}
+
+.on {
+  background: #28a745;
+}
+
+.off {
+  background: #999;
+}
+
+.inner {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #fff;
+  display: inline-block;
+  position: absolute;
+  top: 1px;
+
+  transition: left 0.5s;
+}
+
+.on .inner {
+  left: 50%;
+}
+
+.off .inner {
+  left: 1px;
+}
