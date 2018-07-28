@@ -1,4 +1,4 @@
-import {Component, OnInit, Input, Output} from '@angular/core';
+import {Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
 
 @Component({
   selector: 'v-toggle',
@@ -7,25 +7,25 @@ import {Component, OnInit, Input, Output} from '@angular/core';
 })
 
 export class ToggleComponent implements OnInit {
-  @Input()
-  iValue;
+  @Input() value: boolean;
+  @Input() disabled: boolean = false;
+  @Input() fontSize: number = 25;
   @Output()
-  toggle;
+  change: EventEmitter<any> = new EventEmitter();
+  curValue:boolean;
 
-
-  curValue;
 
 
   constructor() {
   }
 
   ngOnInit() {
-    this.curValue = this.iValue;
+    this.curValue = !!this.value;
   }
 
   onToggle() {
     this.curValue = !this.curValue;
-    this.toggle.emit(this.curValue);
+    this.change.emit(this.curValue);
   }
 
 

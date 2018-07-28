@@ -1,4 +1,4 @@
-<span class="outer" [ngClass]="{ 'on': curValue===true, 'off': curValue===false}"
-      (click)="onToggle()">
+<span class="outer" [ngClass]="{ 'on': curValue===true, 'off': curValue===false, 'disabled': disabled}"
+      (click)="!disabled && onToggle()" [style.font-size.px]="fontSize">
   <span class="inner"></span>
 </span>
