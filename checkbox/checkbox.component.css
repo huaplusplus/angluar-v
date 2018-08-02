@@ -1,0 +1,11 @@
+.outer{
+  display: inline-block;
+  width: 1.5em;
+  height: 1.5em;
+  border-radius: 0.2em;
+  border: 1px solid #817f8d;
+}
+
+.check-text{
+  line-height: 1.5em;
+}
