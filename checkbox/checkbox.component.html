@@ -1,19 +1,32 @@
-<div class="outer"
-     [style.font-size.px]="fontSize"
-     [style.background-color]="value===true?color:'transparent'"
-     [style.border-color]="hovered||value!==false?color:'#817f8d'"
-     (mouseover)="hovered=true"
+<div (mouseover)="hovered=true"
      (mouseleave)="hovered=false"
-     (click)="onClickCheck()"
-
+     (click)="!disabled&&onClickCheck()"
+     class="outer"
+     [class.disabled]="disabled"
+     [style.font-size.px]="fontSize"
+     *ngIf="value !== undefined"
 >
 
-  <svg foucusable="false" version="1.1" viewBox="0 0 24 24">
-    <path d="M4.1,12.7 9,17.6 20.3,6.3" fill="none" stroke="#fafafa" stroke-width="2"
-          *ngIf="value===true"></path>
-    <rect width="14" height="14" [style.fill]="color" *ngIf="value===null"
-          x="5" y="5"></rect>
-  </svg>
+
+  <div class="box"
+       [style.background-color]="value===true?color:'transparent'"
+       [style.border-color]="hovered||value!==false?borderColor:'#817f8d'">
+
+    <svg foucusable="false" version="1.1" viewBox="0 0 24 24">
+      <path d="M4.1,12.7 9,17.6 20.3,6.3" fill="none" [attr.stroke]="rightMarkColor" stroke-width="2"
+            *ngIf="value===true"></path>
+      <rect width="14" height="14" [style.fill]="halfRectColor" *ngIf="value===null"
+            x="5" y="5"></rect>
+    </svg>
+
+  </div>
+  <span class="check-text">
+    <ng-content></ng-content>
+  </span>
+
 
 </div>
-<span (click)="onClickCheck()" class="check-text">{{text}}</span>
+
+
+
+

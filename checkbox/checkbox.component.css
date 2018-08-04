@@ -1,11 +1,26 @@
 .outer{
+  cursor: pointer;
   display: inline-block;
-  width: 1.5em;
-  height: 1.5em;
-  border-radius: 0.2em;
+}
+
+
+.outer.disabled{
+  cursor: not-allowed;
+  opacity: .5;
+}
+
+.box{
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  border-radius: .1em;
   border: 1px solid #817f8d;
+  vertical-align: middle;
+  box-sizing: content-box;
+  margin-right: .2em;
 }
 
 .check-text{
-  line-height: 1.5em;
+  line-height: 1em;
+  vertical-align: middle;
 }
