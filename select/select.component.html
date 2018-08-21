@@ -1,0 +1,7 @@
+<div class="v-select" (click)="onToggleList()">
+  <ul class="select-list" *ngIf="ifList">
+    <li *ngFor="let opt of options; let index = index;" (click)="onSelect($event, index )">
+      {{opt}}
+    </li>
+  </ul>
+</div>

@@ -1,0 +1,31 @@
+.v-select{
+  position: relative;
+  border: 1px solid #ccc;
+  display: inline-block;
+  width: 200px;
+  height: 40px;
+  border-radius: 5px;
+}
+
+.v-select:after{
+  content:'';
+  display: block;
+  position: absolute;
+  border: 10px solid transparent;
+  border-top: 10px solid #000;
+  right: 10px;
+  top: 10px;
+}
+
+.select-list{
+  position: absolute;
+  left: 0;
+  top: 42px;
+  width: 100%;
+  border: 1px solid #000;
+  text-align: left;
+}
+
+li{
+  list-style: none;
+}
